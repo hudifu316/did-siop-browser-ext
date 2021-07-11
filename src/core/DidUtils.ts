@@ -30,6 +30,7 @@ const createKeyDid = async function(){
     let methodSpecificBytes = Buffer.from(multibaseEncode('base58btc', mutlicodeAddPrefix('ed25519-pub', keyPair.publicKey)));
     let did = 'did:key:' + methodSpecificBytes.toString();
     let privateKeyString = base58.encode(keyPair.secretKey);
+    console.log('privateKey: ' + privateKeyString);
 
     return {
         did,
